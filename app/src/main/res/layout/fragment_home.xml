@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.HomeFragment.ClickProxy" />
+
+        <variable
+            name="vm"
+            type="com.ps.wb.state.HomeViewModel" />
+
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.page.HomeFragment">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:text="首页"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#F2F2F2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_card">
+
+                    <TextView
+                        android:id="@+id/tv_flag_send"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginVertical="30dp"
+                        android:layout_marginStart="15dp"
+                        android:background="@drawable/bg_tv_send"
+                        android:gravity="center"
+                        android:text="寄"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/vector_line"
+                        android:layout_width="0.5dp"
+                        android:layout_height="0dp"
+                        android:background="@color/light_gray"
+                        app:layout_constraintBottom_toTopOf="@id/tv_flag_receive"
+                        app:layout_constraintEnd_toEndOf="@id/tv_flag_send"
+                        app:layout_constraintStart_toStartOf="@id/tv_flag_send"
+                        app:layout_constraintTop_toBottomOf="@id/tv_flag_send" />
+
+                    <View
+                        android:id="@+id/hor_line"
+                        android:layout_width="0dp"
+                        android:layout_height="0.5dp"
+                        android:layout_marginHorizontal="30dp"
+                        android:background="@color/light_gray"
+                        app:layout_constraintBottom_toBottomOf="@id/vector_line"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/vector_line"
+                        app:layout_constraintTop_toTopOf="@id/vector_line" />
+
+                    <TextView
+                        android:id="@+id/tv_flag_receive"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/bg_tv_receive"
+                        android:gravity="center"
+                        android:text="收"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_flag_send" />
+
+                    <TextView
+                        android:id="@+id/tv_send_info"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:drawableEnd="@drawable/ic_contract"
+                        android:gravity="center_vertical"
+                        android:hint="请填写寄件人地址信息"
+                        android:onClick="@{()->click.onChooseSendInfo()}"
+                        android:text="@{vm.sendAddress.addressDetail}"
+                        app:layout_constraintBottom_toTopOf="@id/hor_line"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/vector_line"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_receive_info"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="15dp"
+                        android:drawableEnd="@drawable/ic_contract"
+                        android:gravity="center_vertical"
+                        android:hint="请填写收件人地址信息"
+                        android:onClick="@{()->click.onChooseReceiveInfo()}"
+                        android:text="@{vm.receiveAddress.addressDetail}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/vector_line"
+                        app:layout_constraintTop_toBottomOf="@id/hor_line" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@drawable/bg_card"
+                    android:onClick="@{()->click.onSetInfo()}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="物品信息"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="5dp"
+                        android:gravity="end"
+                        android:hint="请选择类型&amp;重量"
+                        android:text="@{vm.info}"
+                        android:textColor="#333333" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_card"
+                    android:onClick="@{()->click.onChooseBookTime()}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="取件时间"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="5dp"
+                        android:gravity="end"
+                        android:text="@{vm.time}"
+                        android:textColor="#333333" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:onClick="@{()->click.onAddMark()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@drawable/bg_card">
+
+                    <TextView
+                        android:id="@+id/tv_remark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="备注"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:layout_marginEnd="15dp"
+                        android:layout_toEndOf="@+id/tv_remark"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="5dp"
+                        android:gravity="end"
+                        android:hint="物品描述、配送要求等"
+                        android:text="@{vm.remark}"
+                        android:textColor="#333333" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/bg_card">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:text="支付方式"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="15dp"
+                        android:drawablePadding="5dp"
+                        android:text="现场支付"
+                        android:textColor="#333333" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tv_money_maybe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:text="预计金额"
+                android:textColor="#333333"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_money_maybe"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@id/tv_money_maybe"
+                android:hint="￥ - - "
+                android:text="@{vm.money}"
+                android:textColor="@color/red"
+                android:textColorHint="@color/red"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="10dp"
+                android:hint=" - - 公里"
+                android:text="@{vm.distance}"
+                android:textSize="13sp" />
+
+            <Button
+                android:onClick="@{()->click.onSubmit()}"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/bg_btn_save_address"
+                android:paddingHorizontal="20dp"
+                android:text="提交订单"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

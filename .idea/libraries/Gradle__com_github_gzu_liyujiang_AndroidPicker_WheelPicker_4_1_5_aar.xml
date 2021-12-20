@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.gzu-liyujiang.AndroidPicker:WheelPicker:4.1.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/be474314119c015f12a6c7f010f326d1/transformed/jetified-WheelPicker-4.1.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/be474314119c015f12a6c7f010f326d1/transformed/jetified-WheelPicker-4.1.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/be474314119c015f12a6c7f010f326d1/transformed/jetified-WheelPicker-4.1.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.gzu-liyujiang.AndroidPicker/WheelPicker/4.1.5/edbf7f860bd5f829f4d4283240cc613dbefa655f/WheelPicker-4.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

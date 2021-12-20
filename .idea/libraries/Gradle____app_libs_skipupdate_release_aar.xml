@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./app/libs/skipupdate-release.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/117016b4cd7e6db5b3c820c0e85f63f5/transformed/jetified-skipupdate-release/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/117016b4cd7e6db5b3c820c0e85f63f5/transformed/jetified-skipupdate-release/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/117016b4cd7e6db5b3c820c0e85f63f5/transformed/jetified-skipupdate-release/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,90 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //获取手机照片
+    api 'com.github.bingoogolapple:BGAPhotoPicker-Android:2.0.3'
+    api 'com.github.bingoogolapple:BGABaseAdapter-Android:2.0.1'
+    //裁剪
+    api 'com.github.yalantis:ucrop:2.2.6'
+
+    //room
+    def room_version = "2.0.0-beta01"
+    api "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version" // use kapt for Kotlin
+    api "androidx.room:room-guava:$room_version"
+    api 'com.yanzhenjie.permission:x:2.0.1'
+
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.3.0'
+
+    api 'com.alibaba:fastjson:1.2.60'
+    api 'com.squareup.okhttp3:okhttp:3.6.0'
+    api 'com.google.android.material:material:1.1.0'
+
+    api 'com.just.agentweb:agentweb:4.1.3' // (必选)
+    api 'com.just.agentweb:filechooser:4.1.3'// (可选)
+    api 'com.download.library:Downloader:4.1.3'// (可选)
+
+    api 'com.github.xuexiangjys:CityPicker:1.0.2'
+
+    api 'com.github.gzu-liyujiang.AndroidPicker:Common:4.1.5'
+    api 'com.github.gzu-liyujiang.AndroidPicker:WheelPicker:4.1.5'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+    implementation 'androidx.navigation:navigation-runtime:2.2.1'
+
+    // 增加KT相关内容
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}

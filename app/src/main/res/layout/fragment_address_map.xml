@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.ps.wb.state.AddressMapViewModel" />
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.AddressMapFragment.ClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.page.OrdersFragment">
+        <RelativeLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/rv_bar"
+            android:background="#2196F3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:onClick="@{()->click.onBackPress()}"
+                android:layout_width="60dp"
+                android:padding="15dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="选择地址"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </RelativeLayout>
+        <com.baidu.mapapi.map.MapView
+            app:layout_constraintTop_toBottomOf="@id/rv_bar"
+            android:id="@+id/mapView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clickable="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_save_box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_key"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:paddingStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                />
+            <TextView
+                android:id="@+id/tv_dis"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp"
+                android:paddingStart="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginTop="13dp"
+                android:ellipsize="end"
+                />
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:onClick="@{()->click.onSurePress()}"
+                android:background="@drawable/bg_btn_save_address"
+                android:textColor="@color/white"
+                android:text="使用此地址"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

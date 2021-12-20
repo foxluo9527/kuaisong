@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.FeedbackFragment.ClickProxy" />
+
+        <variable
+            name="vm"
+            type="com.ps.wb.state.FeedbackViewModel" />
+
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:orientation="vertical"
+        tools:context=".ui.page.FeedbackFragment">
+
+        <RelativeLayout
+            android:id="@+id/rv_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2196F3">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:onClick="@{()->click.onBackPress()}"
+                android:padding="15dp"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="意见反馈"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </RelativeLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_10"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#333333"
+                        android:textSize="13sp"
+                        android:text="反馈内容"/>
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:background="@drawable/bg_back"
+                        android:layout_marginTop="10dp"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+                        <EditText
+                            android:text="@={vm.content}"
+                            android:gravity="start"
+                            android:textSize="13sp"
+                            android:textColor="#333333"
+                            android:id="@+id/et_content"
+                            android:background="#f2f2f2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLength="500"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/tv_info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:hint="0/500字"
+                            android:text="@{vm.contentNumber}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                    <ImageView
+                        android:id="@+id/iv_add_pic"
+                        android:onClick="@{()->click.addPic()}"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_add_img"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="联系人"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/et_contract_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="70dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="联系人姓名"
+                        android:singleLine="true"
+                        android:text="@={vm.name}"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingHorizontal="@dimen/dp_10"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="联系方式"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/et_phone_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="70dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="手机号/QQ号/邮箱"
+                        android:singleLine="true"
+                        android:text="@={vm.phone}"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+        <Button
+            android:onClick="@{()->click.submit()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_save_address"
+            android:layout_margin="15dp"
+            android:textColor="@color/white"
+            android:text="提交反馈"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

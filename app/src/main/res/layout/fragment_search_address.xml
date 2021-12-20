@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.ps.wb.state.SearchAddressViewModel" />
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.SearchAddressFragment.ClickProxy" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.page.OrdersFragment">
+        <RelativeLayout
+            android:id="@+id/rv_bar"
+            android:background="#2196F3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:onClick="@{()->click.onBackPress()}"
+                android:layout_width="60dp"
+                android:padding="15dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="选择地址"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </RelativeLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingHorizontal="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:onClick="@{()->click.onChooseCity()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="暂无定位"
+                android:text="@{shareVm.cityInfo}"
+                android:textColorHint="#333333"
+                android:textColor="#333333"
+                android:drawablePadding="3dp"
+                android:drawableEnd="@drawable/ic_down"/>
+            <EditText
+                android:layout_marginStart="10dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:paddingStart="8dp"
+                android:text="@={vm.searchContent}"
+                android:hint="请输入地址"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_search"
+                android:background="@drawable/bg_input_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_search_result"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

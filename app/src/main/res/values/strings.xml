@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mine">我的</string>
+    <string name="permission_camera_storage">文件读取权限或相机权限被禁用，请前往权限管理设置文件读取或相机权限</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wbps.iml" filepath="$PROJECT_DIR$/.idea/modules/wbps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Common/wbps.Common.iml" filepath="$PROJECT_DIR$/.idea/modules/Common/wbps.Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WheelPicker/wbps.WheelPicker.iml" filepath="$PROJECT_DIR$/.idea/modules/WheelPicker/wbps.WheelPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WheelView/wbps.WheelView.iml" filepath="$PROJECT_DIR$/.idea/modules/WheelView/wbps.WheelView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/wbps.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/wbps.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baseLib/wbps.baseLib.iml" filepath="$PROJECT_DIR$/.idea/modules/baseLib/wbps.baseLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/citypicker/wbps.citypicker.iml" filepath="$PROJECT_DIR$/.idea/modules/citypicker/wbps.citypicker.iml" />
+    </modules>
+  </component>
+</project>

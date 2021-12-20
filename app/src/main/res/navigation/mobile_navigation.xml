@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ps.wb.ui.page.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_home_address_info"
+            app:destination="@id/navigation_home_address_info"
+            app:enterAnim="@anim/ver_tran_in" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home_address_info"
+        android:name="com.ps.wb.ui.page.AddressInfoFragment"
+        android:label="@string/title_address_send"
+        tools:layout="@layout/fragment_address_info">
+        <action
+            android:id="@+id/action_navigation_home_address_info_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_home_address_info_to_searchAddressFragment"
+            app:destination="@id/searchAddressFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.ps.wb.ui.page.MineFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_mine">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_addressManageFragment"
+            app:destination="@id/addressManageFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_feedbackFragment"
+            app:destination="@id/feedbackFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_messageFragment"
+            app:destination="@id/messageFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.ps.wb.ui.page.NotificationFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_navigation_notifications_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.ps.wb.ui.page.OrdersFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_navigation_orders_to_searchOrderFragment"
+            app:destination="@id/searchOrderFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+        <action
+            android:id="@+id/action_navigation_orders_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/ver_tran_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchAddressFragment"
+        android:name="com.ps.wb.ui.page.SearchAddressFragment"
+        android:label="SearchAddressFragment"
+        tools:layout="@layout/fragment_search_address">
+        <action
+            android:id="@+id/action_searchAddressFragment_to_navigation_home_address_info"
+            app:destination="@id/navigation_home_address_info" />
+        <action
+            android:id="@+id/action_searchAddressFragment_to_addressMapFragment"
+            app:destination="@id/addressMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressMapFragment"
+        android:name="com.ps.wb.ui.page.AddressMapFragment"
+        android:label="AddressMapFragment"
+        tools:layout="@layout/fragment_address_map">
+        <action
+            android:id="@+id/action_addressMapFragment_to_searchAddressFragment"
+            app:destination="@id/searchAddressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchOrderFragment"
+        android:name="com.ps.wb.ui.page.SearchOrderFragment"
+        android:label="SearchOrdeFragment"
+        tools:layout="@layout/fragment_search_order">
+        <action
+            android:id="@+id/action_searchOrdeFragment_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+        <action
+            android:id="@+id/action_searchOrdeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ps.wb.ui.page.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+        <action
+            android:id="@+id/action_detailFragment_to_searchOrdeFragment"
+            app:destination="@id/searchOrderFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressManageFragment"
+        android:name="com.ps.wb.ui.page.AddressManageFragment"
+        android:label="AddressManageFragment"
+        tools:layout="@layout/fragment_address_manage">
+        <action
+            android:id="@+id/action_addressManageFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.ps.wb.ui.page.FeedbackFragment"
+        android:label="FeedbackFragment"
+        tools:layout="@layout/fragment_feedback">
+        <action
+            android:id="@+id/action_feedbackFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.ps.wb.ui.page.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutFragment_to_navigation_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.ps.wb.ui.page.MessageFragment"
+        android:label="MessageFragment"
+        tools:layout="@layout/fragment_message">
+
+    </fragment>
+</navigation>

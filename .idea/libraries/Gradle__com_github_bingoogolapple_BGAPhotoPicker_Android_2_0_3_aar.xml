@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bingoogolapple:BGAPhotoPicker-Android:2.0.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/48b4869fe925f9fd29d713c8f96d77de/transformed/jetified-BGAPhotoPicker-Android-2.0.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/48b4869fe925f9fd29d713c8f96d77de/transformed/jetified-BGAPhotoPicker-Android-2.0.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/48b4869fe925f9fd29d713c8f96d77de/transformed/jetified-BGAPhotoPicker-Android-2.0.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bingoogolapple/BGAPhotoPicker-Android/2.0.3/6b446a92af5b9299ea3e86091b7db301621e07/BGAPhotoPicker-Android-2.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

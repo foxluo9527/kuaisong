@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bingoogolapple:BGABaseAdapter-Android:2.0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8730f03d49ee2ee2321ad8a28f9738e0/transformed/jetified-BGABaseAdapter-Android-2.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8730f03d49ee2ee2321ad8a28f9738e0/transformed/jetified-BGABaseAdapter-Android-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8730f03d49ee2ee2321ad8a28f9738e0/transformed/jetified-BGABaseAdapter-Android-2.0.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.bingoogolapple/BGABaseAdapter-Android/2.0.1/f737ede7edc10f40ef9fb60c11e092ab2a0cb02d/BGABaseAdapter-Android-2.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

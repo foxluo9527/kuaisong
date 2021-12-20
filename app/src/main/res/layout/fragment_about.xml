@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.AboutFragment.ClickProxy" />
+
+        <variable
+            name="vm"
+            type="com.ps.wb.state.AboutViewModel" />
+
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2"
+        android:orientation="vertical"
+        tools:context=".ui.page.FeedbackFragment">
+
+        <RelativeLayout
+            android:id="@+id/rv_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2196F3">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:onClick="@{()->click.onBackPress()}"
+                android:padding="15dp"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="关于我们"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </RelativeLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/bg_card"
+                    android:layout_margin="@dimen/dp_10"
+                    android:layout_height="200dp">
+
+                    <ImageView
+                        android:id="@+id/iv_logo"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_logo" />
+                    <TextView
+                        android:id="@+id/tv_version"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_logo"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#555555"
+                        android:textSize="16sp"
+                        android:hint="版本号"
+                        android:text="@{vm.version}"/>
+                </RelativeLayout>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:background="@drawable/bg_card"
+                    android:orientation="vertical">
+                    <TextView
+                        android:onClick="@{()->click.checkVersion()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:drawableStart="@drawable/ic_check"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="10dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="@dimen/dp_10"
+                        android:text="检查更新"
+                        android:textColor="#333333" />
+                    <View
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/chart_0.5dp"
+                        android:background="@color/light_gray"/>
+                    <TextView
+                        android:onClick="@{()->click.privacyPress()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:drawableStart="@drawable/ic_privacy"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="12dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="12dp"
+                        android:text="隐私政策"
+                        android:textColor="#333333" />
+                    <View
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/chart_0.5dp"
+                        android:background="@color/light_gray"/>
+                    <TextView
+                        android:onClick="@{()->click.agreePress()}"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:drawableStart="@drawable/ic_agree"
+                        android:drawableEnd="@drawable/ic_right"
+                        android:drawablePadding="11.5dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="11.5dp"
+                        android:text="用户协议"
+                        android:textColor="#333333" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:textColor="#797979"
+            android:gravity="center"
+            android:text="Copyinght© 66配送平台 版权所有 \n广州思辰信息科技有限公司"
+            android:textSize="14sp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

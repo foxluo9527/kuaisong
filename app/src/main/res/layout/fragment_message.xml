@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.ps.wb.ui.page.MessageFragment.ClickProxy" />
+
+        <variable
+            name="vm"
+            type="com.ps.wb.state.MessageViewModel" />
+
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F4F4"
+        android:orientation="vertical"
+        tools:context=".ui.page.OrdersFragment">
+
+        <RelativeLayout
+            android:id="@+id/rv_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2196F3">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:onClick="@{()->click.onBackPress()}"
+                android:padding="15dp"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="个人信息"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:onClick="@{()->click.showHead()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/menu_item_bg">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginVertical="13dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="用户头像"
+                        android:textColor="@color/black_001"
+                        android:textSize="15sp" />
+
+                    <com.scrb.baselib.view.CircleImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:gravity="end"
+                        android:src="@mipmap/ic_head_null" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_nick_name"
+                    android:onClick="@{()->click.showName()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menu_item_bg">
+
+                    <TextView
+                        android:id="@+id/tv_name_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginVertical="13dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="用户昵称"
+                        android:textColor="@color/black_001"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_toEndOf="@+id/tv_name_left"
+                        android:gravity="end"
+                        android:text="@{vm.name}"
+                        android:textColor="@color/gray_004" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/menu_item_bg">
+
+                    <TextView
+                        android:id="@+id/tv_phone_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginVertical="13dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="手机号码"
+                        android:textColor="@color/black_001"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_toEndOf="@+id/tv_phone_left"
+                        android:gravity="end"
+                        android:text="@{shareVm.loginUSerPhone}"
+                        android:textColor="@color/gray_004" />
+                </RelativeLayout>
+
+                <TextView
+                    android:onClick="@{()->click.changePass()}"
+                    android:id="@+id/tv_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="修改密码"
+                    android:textColor="@color/black_001"
+                    android:textSize="15sp"
+                    app:drawableEndCompat="@drawable/ic_right" />
+
+                <TextView
+                    android:onClick="@{()->click.unRegister()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="注销账户"
+                    android:textColor="@color/black_001"
+                    android:textSize="15sp"
+                    app:drawableEndCompat="@drawable/ic_right" />
+
+                <TextView
+                    android:onClick="@{()->click.logOut()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/menu_item_bg"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="退出登录"
+                    android:textColor="@color/black_001"
+                    android:textSize="15sp"
+                    app:drawableEndCompat="@drawable/ic_right" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

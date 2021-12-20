@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="bg_001">#f8f8f8</color>
+    <color name="bg_002">#150D3F</color>
+    <!--主题色-->
+    <color name="theme">#267AF8</color>
+    <!--透明色-->
+    <color name="transparent">#00000000</color>
+    <!--屏幕默认色-->
+    <color name="default_">#F9F9F9</color>
+    <!--灰色-->
+    <color name="gray_001">#F8F8F8</color>
+    <color name="gray_002">#EEEEEE</color>
+    <color name="gray_003">#E2E2E2</color>
+    <color name="gray_004">#CCCCCC</color>
+    <color name="gray_005">#999999</color>
+    <color name="gray_006">#9B9B9B</color>
+    <color name="gray_007">#666666</color>
+    <color name="gray_008">#5B5C59</color>
+    <color name="gray_line">#F9F9F9</color>
+    <!--红色-->
+    <color name="red_001">#FF2626</color>
+    <color name="red_002">#E57B83</color>
+    <color name="red_003">#FF5C41</color>
+    <!--蓝色-->
+    <color name="blue_001">#A2B1FF</color>
+    <color name="blue_002">#286FC7</color>
+    <color name="blue_003">#0084FF</color>
+    <color name="blue_004">#0083FE</color>
+    <color name="blue_005">#246CCF</color>
+    <!--橘色-->
+    <color name="orange_001">#D7A994</color>
+    <color name="orange_002">#FF4E4A</color>
+    <color name="orange_003">#C9665B</color>
+    <!--白色-->
+    <color name="white">#FFFFFF</color>
+    <!--黑色-->
+    <color name="black_001">#333333</color>
+    <color name="black_002">#000000</color>
+    <color name="black_003">#3F3F3F</color>
+    <!--绿色-->
+    <color name="green">#5CB74B</color>
+    <color name="green_001">#34A383</color>
+    <color name="green_002">#86CC38</color>
+    <!--粉色-->
+    <color name="pink">#FE608C</color>
+    <color name="pink_001">#FEF6F6</color>
+    <color name="pink_002">#FFD6D6</color>
+    <color name="pink_003">#C87F77</color>
+    <!--黄色-->
+    <color name="yellow">#FF9100</color>
+    <color name="yellow_001">#FFA200</color>
+    <color name="yellow_002">#FF9700</color>
+    <color name="yellow_003">#FF9D48</color>
+    <!--紫色-->
+    <color name="purple_001">#23263D</color>
+    <color name="purple_002">#C95BF0</color>
+    <color name="purple_003">#D55FFE</color>
+
+</resources>

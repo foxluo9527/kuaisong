@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_card">
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="类型"
+            android:textColor="#333333"
+            android:textColorHint="#333333"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:gravity="end"
+            android:hint="订单状态"
+            android:textColor="@color/light_gray"
+            app:layout_constraintBottom_toBottomOf="@id/tv_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_type" />
+
+        <TextView
+            android:id="@+id/send_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:hint="发件人"
+            android:maxLines="1"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/send_point"
+            app:layout_constraintEnd_toEndOf="@id/tv_state"
+            app:layout_constraintStart_toEndOf="@id/send_point"
+            app:layout_constraintTop_toTopOf="@id/send_point" />
+
+        <TextView
+            android:id="@+id/send_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:hint="发件手机号"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@id/tv_state"
+            app:layout_constraintStart_toStartOf="@id/send_address"
+            app:layout_constraintTop_toBottomOf="@id/send_address" />
+
+        <View
+            android:id="@+id/send_point"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_tv_send"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/tv_type" />
+
+        <TextView
+            android:id="@+id/receive_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:hint="收件人"
+            android:maxLines="1"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/receive_point"
+            app:layout_constraintEnd_toEndOf="@id/tv_state"
+            app:layout_constraintStart_toEndOf="@id/receive_point"
+            app:layout_constraintTop_toTopOf="@id/receive_point" />
+
+        <TextView
+            android:id="@+id/receive_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:hint="收件手机号"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@id/tv_state"
+            app:layout_constraintStart_toStartOf="@id/receive_address"
+            app:layout_constraintTop_toBottomOf="@id/receive_address" />
+
+        <View
+            android:id="@+id/receive_point"
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_tv_receive"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/send_phone" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_type"
+            app:layout_constraintTop_toBottomOf="@id/receive_phone" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_btn_save_address"
+            android:text="取消订单"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_time"
+            app:layout_constraintTop_toTopOf="@id/tv_time" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

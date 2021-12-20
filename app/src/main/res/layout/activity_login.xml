@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="com.ps.wb.ui.LoginActivity.ClickProxy" />
+        <variable
+            name="shareVm"
+            type="com.ps.wb.base.bridge.callback.SharedViewModel" />
+
+        <variable
+            name="vm"
+            type="com.ps.wb.state.LoginViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".ui.LoginActivity">
+
+        <RelativeLayout
+            android:id="@+id/rv_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#2196F3">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:onClick="@{()->click.back()}"
+                android:padding="15dp"
+                app:srcCompat="@drawable/abc_vector_test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                android:onClick="@{()->click.register()}"
+                android:text="注册"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_top"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_logo"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/shape_bg_white_four"
+                    android:drawablePadding="10dp"
+                    android:singleLine="true"
+                    android:hint="请输入手机号码"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:inputType="phone"
+                    android:text="@={vm.phone}"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="75dp"
+                    android:textColorHint="@color/gray_004"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/iv_top" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="32dp"
+                    android:background="@drawable/shape_bg_white_four"
+                    android:drawablePadding="10dp"
+                    android:hint="请输入密码"
+                    android:text="@={vm.pwd}"
+                    android:inputType="textPassword"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:layout_marginTop="15dp"
+                    android:paddingStart="24dp"
+                    android:textColorHint="@color/gray_004"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/et_phone" />
+
+                <TextView
+                    android:id="@+id/tv_go_reset"
+                    android:onClick="@{()->click.reset()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="忘记密码？"
+                    android:textColor="@color/theme"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="13dp"
+                    app:layout_constraintEnd_toEndOf="@id/et_password"
+                    app:layout_constraintTop_toBottomOf="@id/et_password"
+                    android:textSize="12sp" />
+
+                <CheckedTextView
+                    android:id="@+id/tv_login"
+                    android:onClick="@{()->click.login()}"
+                    android:layout_marginTop="53dp"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:text="登录"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_password"
+                    android:background="@drawable/bg_btn_login" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_login"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/ck_privacy"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="我已阅读并同意"
+                        android:textSize="12sp"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:onClick="@{()->click.agree()}"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="《用户协议》"
+                        android:textSize="12sp"
+                        android:textColor="@color/theme" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="与"
+                        android:textSize="12sp"
+                        android:textColor="#333333" />
+
+                    <TextView
+                        android:onClick="@{()->click.privacy()}"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="《隐私政策》"
+                        android:textSize="12sp"
+                        android:textColor="@color/theme" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

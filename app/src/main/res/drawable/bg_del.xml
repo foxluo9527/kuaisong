@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_third"
+        android:height="8dp"
+        android:width="8dp"
+        android:gravity="center_horizontal|top"/>
+    <item
+        android:gravity="center_horizontal|top"
+        android:top="6dp">
+        <shape>
+            <solid android:color="#989797"/>
+            <corners android:radius="4dp"/>
+        </shape>
+    </item>
+</layer-list>
